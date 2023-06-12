@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "June6apis.Web", "June6apis.Web\June6apis.Web.csproj", "{91A8AA54-2746-4244-9B93-36ED1A7F08CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "June5apis.Data", "June5apis.Data\June5apis.Data.csproj", "{DC89AF51-3AC3-4DAA-BD3B-9D0E981DCB90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91A8AA54-2746-4244-9B93-36ED1A7F08CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91A8AA54-2746-4244-9B93-36ED1A7F08CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91A8AA54-2746-4244-9B93-36ED1A7F08CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91A8AA54-2746-4244-9B93-36ED1A7F08CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC89AF51-3AC3-4DAA-BD3B-9D0E981DCB90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC89AF51-3AC3-4DAA-BD3B-9D0E981DCB90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC89AF51-3AC3-4DAA-BD3B-9D0E981DCB90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC89AF51-3AC3-4DAA-BD3B-9D0E981DCB90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37415784-1A65-49C7-9E6C-8582BC46D18F}
+	EndGlobalSection
+EndGlobal
