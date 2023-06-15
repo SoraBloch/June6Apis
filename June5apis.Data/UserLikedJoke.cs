@@ -6,7 +6,7 @@ namespace June5apis.Data
     {
         public int UserId { get; set; }
         public int JokeId { get; set; }
-        public bool Liked { get; set; }
+        public Status Status { get; set; }
         public DateTime DateLiked { get; set; }
         [JsonIgnore]
         public User User { get; set; }

@@ -9,7 +9,6 @@ import PrivateRoute from './PrivateRoute';
 import Logout from './Pages/Logout';
 import ViewAll from './Pages/ViewAll';
 
-
 const App = () => {
     return (
         <AuthContextComponent>

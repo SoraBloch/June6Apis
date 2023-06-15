@@ -4,6 +4,7 @@ using June5apis.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace June5apis.Data.Migrations
 {
     [DbContext(typeof(JokesDataContext))]
-    partial class JokesDataContextModelSnapshot : ModelSnapshot
+    [Migration("20230612221435_Update")]
+    partial class Update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -80,14 +82,14 @@ namespace June5apis.Data.Migrations
                     b.Property<DateTime>("DateLiked")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<bool>("Liked")
+                        .HasColumnType("bit");
 
                     b.HasKey("UserId", "JokeId");
 
                     b.HasIndex("JokeId");
 
-                    b.ToTable("UserLikedJokes");
+                    b.ToTable("userLikedJokes");
                 });
 
             modelBuilder.Entity("June5apis.Data.UserLikedJoke", b =>

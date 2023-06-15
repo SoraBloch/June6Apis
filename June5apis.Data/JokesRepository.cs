@@ -37,5 +37,42 @@ namespace June5apis.Data
             var context = new JokesDataContext(_connectionString);
             return context.Jokes.FirstOrDefault(j => j.OriginId == originId);
         }
+        public UserLikedJoke GetStatus(int jokeId, int userId)
+        {
+            var context = new JokesDataContext(_connectionString);
+            return context.UserLikedJokes.FirstOrDefault(j => j.JokeId == jokeId && j.UserId == userId);
+        }
+        public void UpdateStatus(int jokeId, int userId, bool like)
+        {
+            Status status = Status.Liked;
+            if (!like)
+            {
+                status = Status.Disliked;
+            }
+            var context = new JokesDataContext(_connectionString);
+            var userLikedJoke = context.UserLikedJokes.FirstOrDefault(j => j.JokeId == jokeId && j.UserId == userId);
+            if (userLikedJoke == null)
+            {
+                context.UserLikedJokes.Add(new UserLikedJoke
+                {
+                    UserId = userId,
+                    JokeId = jokeId,
+                    Status = status,
+                    DateLiked = DateTime.Now
+                });
+            }
+            else
+            {
+                userLikedJoke.Status = status;
+                userLikedJoke.DateLiked = DateTime.Now;
+            }
+
+            context.SaveChanges();
+        }
+        public List<Joke> GetAllJokes()
+        {
+            var context = new JokesDataContext(_connectionString);
+            return context.Jokes.Include(j => j.UserLikedJokes).ToList();
+        }
     }
 }

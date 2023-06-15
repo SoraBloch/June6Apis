@@ -32,7 +32,7 @@ namespace June5apis.Data
 
             base.OnModelCreating(modelBuilder);
         }
-        public DbSet<UserLikedJoke> userLikedJokes { get; set; }
+        public DbSet<UserLikedJoke> UserLikedJokes { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Joke> Jokes { get; set; }
     }

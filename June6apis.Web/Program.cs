@@ -3,9 +3,19 @@ namespace June6apis.Web
 {
     public class Program
     {
+        private static string CookieScheme = "ReactAuthDemo";
         public static void Main(string[] args)
         {
+
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddAuthentication(CookieScheme)
+         .AddCookie(CookieScheme, options =>
+         {
+             options.LoginPath = "/account/login";
+         });
+
+            builder.Services.AddSession();
 
             // Add services to the container.
 
@@ -24,6 +34,8 @@ namespace June6apis.Web
             app.UseStaticFiles();
             app.UseRouting();
 
+            app.UseSession();
+            app.UseAuthentication();
 
             app.MapControllerRoute(
                 name: "default",
